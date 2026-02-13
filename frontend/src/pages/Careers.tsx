@@ -6,7 +6,7 @@ const Careers = () => {
     const jobs = [
         {
             title: 'Senior React Developer',
-            type: 'Full-time • Remote OK',
+            type: 'Full-time • Remote',
             salary: '$5k - $10k',
             location: 'Kozhikode, Kerala / Remote',
             skills: ['React', 'TypeScript', 'Next.js', 'TailwindCSS'],
