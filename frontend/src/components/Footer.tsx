@@ -66,11 +66,11 @@ const Footer = () => {
                     <div>
                         <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-8">Contact</h4>
                         <div className="space-y-4 text-gray-600 dark:text-gray-400">
-                            <a href="mailto:hello@technova.com" className="flex items-center gap-3 hover:text-primary transition-all">
-                                <Mail size={18} /> hello@technova.com
+                            <a href="mailto:info@technova.com" className="flex items-center gap-3 hover:text-primary transition-all">
+                                <Mail size={18} /> info@technova.com
                             </a>
-                            <a href="tel:+919876543210" className="flex items-center gap-3 hover:text-primary transition-all">
-                                <Phone size={18} /> +91 98765 43210
+                            <a href="tel:+919207431259" className="flex items-center gap-3 hover:text-primary transition-all">
+                                <Phone size={18} /> +91 9207431259
                             </a>
                             <div className="flex items-start gap-3">
                                 <MapPin size={18} />
