@@ -7,7 +7,7 @@ const Careers = () => {
         {
             title: 'Senior React Developer',
             type: 'Full-time • Remote OK',
-            salary: '$80k - $120k',
+            salary: '$5k - $10k',
             location: 'Kozhikode, Kerala / Remote',
             skills: ['React', 'TypeScript', 'Next.js', 'TailwindCSS'],
             description: 'Build scalable enterprise web applications with React ecosystem.'
@@ -15,7 +15,7 @@ const Careers = () => {
         {
             title: 'Django Backend Engineer',
             type: 'Full-time • Hybrid',
-            salary: '$70k - $110k',
+            salary: '$4k - $9k',
             location: 'Kozhikode, Kerala',
             skills: ['Django', 'DRF', 'PostgreSQL', 'Docker'],
             description: 'Design robust APIs and scalable backend systems for enterprise clients.'
@@ -23,7 +23,7 @@ const Careers = () => {
         {
             title: 'Senior DevOps Engineer',
             type: 'Full-time • Remote',
-            salary: '$90k - $140k',
+            salary: '$7k - $12k',
             location: 'Remote (India)',
             skills: ['AWS', 'Kubernetes', 'Terraform', 'CI/CD'],
             description: 'Architect cloud infrastructure and DevOps pipelines for global scale.'
