@@ -19,6 +19,8 @@
   }
 }
 
+
+
 @layer components {
   .glass-card {
     @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/30 dark:border-gray-800/50 rounded-3xl shadow-xl;

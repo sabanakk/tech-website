@@ -7,6 +7,7 @@ const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
   const location = useLocation();
 
+  // ✅ DARK MODE PERSISTENCE
   useEffect(() => {
     const saved = localStorage.getItem('darkMode');
     const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -14,6 +15,40 @@ const Navbar = () => {
     setDarkMode(prefersDark);
     document.documentElement.classList.toggle('dark', prefersDark);
   }, []);
+
+  // ✅ MOBILE MENU SCROLL LOCK - FIXES BODY JUMP
+  useEffect(() => {
+    if (open) {
+      // Save scroll position & lock body
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Restore scroll position
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+    };
+  }, [open]);
 
   const toggleDarkMode = () => {
     const newDarkMode = !darkMode;
@@ -34,7 +69,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 glass-card shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
-          {/* Logo - Responsive */}
+          {/* Logo */}
           <Link to="/" className="text-2xl sm:text-3xl gradient-text tracking-tight font-black">
             TechNova
           </Link>
@@ -46,8 +81,8 @@ const Navbar = () => {
                 key={link.to}
                 to={link.to}
                 className={`font-semibold px-4 lg:px-6 py-3 rounded-2xl transition-all duration-300 text-sm lg:text-base ${location.pathname === link.to
-                    ? 'bg-gradient-to-r from-primary/20 to-yankees-500/20 text-primary shadow-lg'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-primary/10'
+                  ? 'bg-gradient-to-r from-primary/20 to-yankees-500/20 text-primary shadow-lg'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-primary/10'
                   }`}
               >
                 {link.label}
@@ -56,8 +91,13 @@ const Navbar = () => {
             <button
               onClick={toggleDarkMode}
               className="ml-4 p-3 rounded-2xl glass-card hover:bg-primary/20 dark:hover:bg-yankees-500/30 transition-all"
+              aria-label="Toggle dark mode"
             >
-              {darkMode ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />}
+              {darkMode ? (
+                <Sun size={20} className="text-yellow-400" />
+              ) : (
+                <Moon size={20} />
+              )}
             </button>
           </div>
 
@@ -68,12 +108,16 @@ const Navbar = () => {
               className="p-2 rounded-xl glass-card hover:bg-primary/20 transition-all"
               aria-label="Toggle dark mode"
             >
-              {darkMode ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />}
+              {darkMode ? (
+                <Sun size={20} className="text-yellow-400" />
+              ) : (
+                <Moon size={20} />
+              )}
             </button>
             <button
-              className="p-2 rounded-xl glass-card hover:bg-gray-200/50 dark:hover:bg-gray-700/50"
+              className="p-2 rounded-xl glass-card hover:bg-gray-200/50 dark:hover:bg-gray-700/50 transition-all"
               onClick={() => setOpen(!open)}
-              aria-label="Open menu"
+              aria-label="Toggle menu"
             >
               {open ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -90,8 +134,8 @@ const Navbar = () => {
                   to={link.to}
                   onClick={() => setOpen(false)}
                   className={`block w-full p-6 rounded-2xl font-bold text-lg text-left transition-all ${location.pathname === link.to
-                      ? 'bg-gradient-to-r from-primary to-yankees-600 text-white shadow-xl'
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-primary/20 dark:hover:bg-yankees-500/30'
+                    ? 'bg-gradient-to-r from-primary to-yankees-600 text-white shadow-xl'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-primary/20 dark:hover:bg-yankees-500/30'
                     }`}
                 >
                   {link.label}
