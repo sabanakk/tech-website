@@ -73,8 +73,8 @@ const Contact = () => {
                                     <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">
                                         Email Us
                                     </h3>
-                                    <a href="mailto:hello@technova.com" className="text-base sm:text-lg lg:text-xl text-primary hover:text-secondary font-semibold transition-colors break-all">
-                                        hello@technova.com
+                                    <a href="mailto:info@technova.com" className="text-base sm:text-lg lg:text-xl text-primary hover:text-secondary font-semibold transition-colors break-all">
+                                        info@technova.com
                                     </a>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@ const Contact = () => {
                                     <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">
                                         Call Us
                                     </h3>
-                                    <a href="tel:+919876543210" className="text-base sm:text-lg lg:text-xl text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">
+                                    <a href="tel:+919207431259" className="text-base sm:text-lg lg:text-xl text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">
                                         +91 9207431259
                                     </a>
                                 </div>
