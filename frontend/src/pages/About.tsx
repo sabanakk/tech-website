@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Users, Award, Clock, Target, ArrowRight } from 'lucide-react';
 
 const About = () => {
-    const [showTeam, setShowTeam] = useState(false);
+    const [_, setShowTeam] = useState(false);
 
     const stats = [
         { icon: Users, number: '50+', label: 'Happy Clients', color: 'from-primary to-yankees-600' },
