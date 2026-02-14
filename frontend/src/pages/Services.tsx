@@ -49,8 +49,8 @@ const Services = () => {
     ];
 
     const pricing = [
-        { name: 'Starter', price: '$2,999', features: ['1 Landing Page', 'Responsive Design', '1 Month Support'], popular: false },
-        { name: 'Business', price: '$9,999', features: ['5+ Pages', 'CMS Admin', 'API Integration', '6 Months Support'], popular: true },
+        { name: 'Starter', price: '$499', features: ['1 Landing Page', 'Responsive Design', '1 Month Support'], popular: false },
+        { name: 'Business', price: '$999', features: ['5+ Pages', 'CMS Admin', 'API Integration', '6 Months Support'], popular: true },
         { name: 'Enterprise', price: 'Custom', features: ['Full Platform', 'Mobile App', '24/7 Support', 'SLA Guaranteed'], popular: false }
     ];
 
